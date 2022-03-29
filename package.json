@@ -1,0 +1,24 @@
+{
+  "name": "hw1",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/mpaukov/node-hw1#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index",
+    "start:dev":"nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpaukov/node-hw1.git"
+  },
+  "author": "Michael Paukov <Michael.Paukov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpaukov/node-hw1/issues"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
