@@ -10,15 +10,13 @@ async function listContacts() {
 }
 
 async function getContactById(contactId) {
-  const data = await fs.readFile(contactsPath);
-  const contacts = JSON.parse(data);
+  const contacts = await listContacts();
   const contact = contacts.find(({ id }) => id === contactId);
   return contact;
 }
 
 async function removeContact(contactId) {
-  const data = await fs.readFile(contactsPath);
-  const contacts = JSON.parse(data);
+  const contacts = await listContacts();
   const newContacts = JSON.stringify(
     contacts.filter(({ id }) => id !== contactId)
   );
@@ -26,8 +24,7 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-  const data = await fs.readFile(contactsPath);
-  const contacts = JSON.parse(data);
+  const contacts = await listContacts();
   const id = require("nanoid").nanoid();
   const newContacts = JSON.stringify([...contacts, { id, name, email, phone }]);
   await fs.writeFile(contactsPath, newContacts);
