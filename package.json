@@ -19,7 +19,8 @@
     "url": "https://github.com/mpaukov/node-hw1/issues"
   },
   "dependencies": {
-    "commander": "^9.1.0"
+    "commander": "^9.1.0",
+    "nanoid": "^3.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
