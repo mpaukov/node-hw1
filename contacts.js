@@ -29,7 +29,11 @@ async function removeContact(contactId) {
 async function addContact(name, email, phone) {
   const contacts = await listContacts();
   const id = require("nanoid").nanoid();
-  const newContacts = JSON.stringify([...contacts, { id, name, email, phone }]);
+  const newContacts = JSON.stringify(
+    [...contacts, { id, name, email, phone }],
+    null,
+    2
+  );
   await fs.writeFile(contactsPath, newContacts);
 }
 const contactsOperations = {
